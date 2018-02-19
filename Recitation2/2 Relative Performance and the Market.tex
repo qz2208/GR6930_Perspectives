@@ -1,0 +1,153 @@
+\documentclass{beamer}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+
+\title{Relative Performance and the Market \\ \large Perspectives on Economic Studies TA session}
+\author{Qing Zhang}
+\institute{Columbia University}
+\date{\today}
+
+\begin{document}
+\frame{\titlepage}
+
+\frame{
+\frametitle{Providing Incentives vs. Risk-Sharing}
+\begin{itemize}
+\item Alternative ways of organizing agricultural production: pay wages to farmers or rent out land to tenants? 
+\item Paying fixed wages eliminates risks for farmers, but provides no incentive for effort when effort is not observable. Renting out land gives tenants full incentives, but makes them bear all risks.
+\item Share-cropping, a widely-adopted practice, serves as a reconciliation of the tradeoff. Share-holding managers in corporations are an analogue.  
+\end{itemize}
+}
+
+\frame{
+\frametitle{Today}
+\begin{itemize}
+\item Nalebuff and Stiglitz, 1983, Information, Competition, and Markets
+\item Effort (input) is unobservable. Therefore compensation can only be a function of observables (output).
+\item There is a random variable that affects the mapping from input to output. Otherwise it would be possible to infer input from output. 
+\item When there are multiple agents whose random disturbances are correlated, there may be another way to tackle the incentive-risk sharing tradeoff: relative performance based compensation. 
+\item Intuition: other agents' performance provides information about the common random shock. 
+\item They then argue that a competitive market has virtues of a relative performance based compensation scheme.  
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{A Simple Example}
+\begin{itemize}
+\item Suppose the government wants to develop a bomber, the cost of which is subject to a random variable. Contractors can reduce cost by expending more effort.
+\item If the government signs contract with just one contractor: 
+\begin{itemize}
+\item Fixed-fee contract: the contractor bears all the cost. Maximum incentives but high risk on the part of the contractor. The contractor will demand a high risk premium from the government.   
+\item Sharing a fraction of the cost: now the contractor has less incentive to reduce cost.
+\end{itemize} 
+\item But we can sign contract simultaneously with two contractors. Pay each firm a fixed fee plus the cost of the other firm. 
+\begin{itemize}
+\item Assuming the two firms face the same shock, they are fully insured under this scheme. 
+\item They also have incentive to reduce cost. 
+\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{A More General Treatment}
+\begin{itemize}
+\item An individual's output $Q_i$ is determined by effort, $\mu_i$, a shock common to all, $\theta$, and an individual shock, $\epsilon_i$, in the following way:
+\[Q_i = \mu_i\theta + \epsilon_i\]
+\item Individuals choose effort after observing $\theta$ but before observing $\epsilon_i$. Their payoff is given by
+\[U(Y_i) - V(\mu_i)\]
+\end{itemize}
+}
+
+\frame{
+\frametitle{The First Best}
+\begin{itemize}
+\item Suppose the Principal can observe both effort and the environmental shock. She can therefore stipulate effort for each realization of $\theta$. 
+\item Then there is no need to provide incentives. Assuming the Principal is risk neutral and Agents risk averse, it is optimal for Agents to receive a constant income $\bar{Y}$ regardless of their output. 
+\item Next determine optimal effort level in each state (realization of $\theta$). 
+\item Marginal benefit of effort equal to marginal cost:
+\[\theta U'(\bar{Y}) = V'(\mu)\]
+\item This gives optimal effort as a function of $\theta$: $\mu^*(\theta)$.
+\end{itemize}
+}
+
+\frame{
+\frametitle{A Mechanism that Induces Revelation of $\theta$}
+\begin{itemize}
+\item Now assume the Principal can observe neither $\theta$ or $\mu_i$. Let's design a mechanism that induces first-best effort and fully insures the Agents. 
+\item After an Agent observes $\theta$, she is to announce what $\theta$ is (Agent $i$'s announcement: $\hat{\theta}_i$). 
+\item Agent is paid only if her output is close to a target, which depends on $\hat{\theta}_i$. Otherwise the Agent pays a penalty of infinity (sufficiently large). 
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{A Mechanism that Induces Revelation of $\theta$}
+\begin{itemize}
+\item Suppose the idiosyncratic shock $\epsilon_i$ has support $[-1, 1]$.
+\item The compensation scheme is
+\begin{align*}
+Y_i &= \textcolor{red}{\frac{\phi(\hat{\theta}_i)}{U'(\bar{Y})}} - \textcolor{blue}{\frac{\phi(\bar{\theta}_{-i})}{U'(\bar{Y})}} + \bar{Y} \hspace{5pt} \text{if} \hspace{5pt} Q_i \geq \mu^*(\hat{\theta}_i)\hat{\theta}_i - 1 \\
+Y_i &= -\infty \hspace{5pt} \text{otherwise}
+\end{align*}
+where $\bar{\theta}_{-i}$ is average announcement of other individuals.
+\item Now let's see that we can find a function $\phi$ such that it is a best strategy for each Agent to announce the true $\theta$ and expend first-best effort. 
+\item The red term provides full incentives. The blue term kills risks. Similar to the bomber example.
+\end{itemize}
+}
+
+\frame{
+\frametitle{A Mechanism that Induces Revelation of $\theta$}
+\begin{itemize}
+\item First let's see that if I announce true $\theta$, I will want to expend first-best effort $\mu^*(\theta)$. Lower effort $\implies$ positive probability of negative infinity income. Higher effort $\implies$ unnecessary because $\mu^*(\theta)$ already guarantees the compensation. 
+\item If instead of true $\theta$, I announce a higher $\hat{\theta}$, I will receive higher $Y$, but the target also becomes higher.
+\item Marginal benefit of announcing a higher $\hat{\theta}$, evaluated at true $\theta$:
+\[U'(\bar{Y})\frac{\phi'(\theta)}{U'(\bar{Y})} = \phi'(\theta)\]
+\item Have to adjust effort to ensure $\mu \theta = \mu^*(\hat{\theta}_i)\hat{\theta}_i  \implies \mu(\hat{\theta}_i)  = \mu^*(\hat{\theta}_i)\hat{\theta}_i / \theta$
+\item Marginal cost of higher $\hat{\theta}$, evaluated at true $\theta$:
+\[V'\frac{d\mu}{d\hat{\theta}_i}\bigg\rvert_{\hat{\theta}_i = \theta} = V' \frac{1}{\theta}(\mu^{*'}(\theta)\theta + \mu^*(\theta))\]
+\end{itemize}
+}
+
+\frame{
+\frametitle{A Mechanism that Induces Revelation of $\theta$}
+\begin{itemize}
+\item When marginal benefit equals marginal cost, it is optimal to announce true $\theta$:
+\[\phi'(\theta) = V' \frac{1}{\theta}(\mu^{*'}(\theta)\theta + \mu^*(\theta))\]
+\item Can then integrate for $\phi$. 
+\item Notice that when everyone announces true $\theta$, income is always $\bar{Y}$. Introducing $\bar{\theta}_{-i}$ makes Agents fully insured. 
+\end{itemize}
+}
+
+\frame{
+\frametitle{Connection between Competitive Market and Relative Performance}
+Interesting idea:
+\begin{itemize}
+\item In a market, profit of a firm depends not only on its own cost, but also on costs of other firms (which for example determines the equilibrium price). This is analogous to a relative performance based compensation scheme.  
+\item Suppose cost 
+\[c_i = k - \theta \mu_i\]
+\item Then the profit of firm net of effort cost is 
+\[\hat{\pi}_i = (P - k + \theta \mu_i - V(\mu_i))Q_i\]
+\item Competition ensures that every firm makes zero profit and expends optimal effort:
+\[P = \text{min} \hspace{5pt} k - \mu_i \theta + V(\mu_i)\]
+\item Profit always zero $\implies$ no risk. 
+\end{itemize}
+}
+
+\frame{
+\frametitle{Competitive Market vs. Monopoly}
+\begin{itemize}
+\item Now consider the structure of a firm: owner and manager. 
+\item No risk in the competitive market $\implies$ can let the manager own the firm to provide maximum incentives. 
+\item A monopoly market akin to an individualistic compensation scheme with no peers to kill the uncertainty. Therefore profit is variable. 
+\item In this situation cannot let the manager own the firm because the manager will bear all the risk. Have to resort to ``share-cropping". Suppose pay of manager is $\alpha \pi_i + \beta, 0<\alpha<1$. 
+\item Manager will set $\alpha \theta = V'(\mu)$, while first-best effort is $\theta = V'(\mu)$.
+\item Managerial effort does not adjust in response to the environment as fully as in a competitive market. They call this ``managerial slack".
+\end{itemize}
+}
+
+
+\end{document}
